@@ -46,7 +46,15 @@ export default function MtakatifuDetail() {
   return (
     <div style={{ paddingBottom: 80 }}>
       <Header title="Mtakatifu" />
-      <button onClick={handleBack} style={{ padding: 16, background: 'none', border: 'none', color: 'var(--color-text)' }}>← Rudi</button>
+      <button 
+        onClick={() => {
+          if (window.history.length > 1) navigate(-1);
+          else navigate('/home');
+        }} 
+        style={{ padding: 16, background: 'none', border: 'none', color: 'var(--color-text)' }}
+      >
+        ← Rudi
+      </button>
       {data && (
         <button onClick={() => { toggleBookmark('mtakatifu', data.id, data); setBookmarked(!bookmarked); }} style={{ padding: 16, background: 'none', border: 'none', color: 'var(--color-text)', fontSize: '1.2rem' }}>
           {bookmarked ? '🔖' : '📑'}

@@ -88,7 +88,15 @@ END:VCALENDAR`;
   return (
     <div style={{ paddingBottom: 80 }}>
       <Header title="Tukio" />
-      <button onClick={handleBack} style={{ padding: 16, background: 'none', border: 'none', color: 'var(--color-text)' }}>← Rudi</button>
+      <button 
+        onClick={() => {
+          if (window.history.length > 1) navigate(-1);
+          else navigate('/home');
+        }} 
+        style={{ padding: 16, background: 'none', border: 'none', color: 'var(--color-text)' }}
+      >
+        ← Rudi
+      </button>
       <button onClick={handleReminder} style={{ padding: 16, background: 'none', border: 'none', color: 'var(--color-text)', fontSize: '0.9rem' }}>
         {reminder ? '🔔 Kumbusho Limewekwa' : '🔕 Weka Kumbusho'}
       </button>
