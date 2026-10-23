@@ -1,0 +1,3 @@
+{
+  "query": "INSERT INTO user_notifications (visitor_id, title, body, read, sent) SELECT DISTINCT visitor_id, 'Karibu KMCA', 'Asante kwa kutumia app yetu. Karibu!', false, true FROM daily_history LIMIT 1;"
+}
