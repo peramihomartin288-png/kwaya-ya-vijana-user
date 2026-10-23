@@ -52,7 +52,15 @@ export default function SalaView() {
   return (
     <div style={{ paddingBottom: 80 }}>
       <Header title="Sala" />
-      <button onClick={() => navigate(-1)} style={{ padding: 16, background: 'none', border: 'none', color: 'var(--color-text)' }}>← Rudi</button>
+      <button 
+        onClick={() => {
+          if (window.history.length > 1) navigate(-1);
+          else navigate('/home');
+        }} 
+        style={{ padding: 16, background: 'none', border: 'none', color: 'var(--color-text)' }}
+      >
+        ← Rudi
+      </button>
       
       <div style={{ padding: 16 }}>
         <h1 style={{ fontSize: '1.5rem', marginBottom: 8 }}>{data.jina}</h1>
